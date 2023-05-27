@@ -1,0 +1,17 @@
+GET http://localhost:8080/v2/models/classificador-produtos/versions/1.0/ready HTTP/1.1
+
+###
+
+POST http://localhost:8080/v2/models/classificador-produtos/versions/1.0/infer
+Content-Type: application/json
+
+{
+    "inputs": [
+        {
+            "name": "predict",
+            "shape": [3],
+            "datatype": "BYTES",
+            "data": [ "Soldados de plástico", "Senhor dos aneis", "Senhor dos anéis" ]
+        }
+    ]
+}
